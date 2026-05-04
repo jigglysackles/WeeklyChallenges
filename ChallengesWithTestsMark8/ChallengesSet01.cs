@@ -6,14 +6,16 @@ namespace ChallengesWithTestsMark8
     {
         public bool AreTwoNumbersTheSame(int num1, int num2)
         {
-            if(num1 == num2)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            var YayNay = (num1 == num2) ? true : false;
+            return YayNay;
+            // if(num1 == num2)
+            // {
+            //     return true;
+            // }
+            // else
+            // {
+            //     return false;
+            // }
         }
 
         public double Subtract(double minuend, double subtrahend)
@@ -29,8 +31,7 @@ namespace ChallengesWithTestsMark8
         }
 
         public int GetSmallestNumber(int number1, int number2)
-        {
-            
+        { 
             var val = (number1 < number2) ? number1 : number2;
             return val;
         }
