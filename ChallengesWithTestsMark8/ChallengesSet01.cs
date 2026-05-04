@@ -18,32 +18,39 @@ namespace ChallengesWithTestsMark8
 
         public double Subtract(double minuend, double subtrahend)
         {
-            throw new NotImplementedException();
+            var val = minuend - subtrahend;
+            return val;
         }
 
         public int Add(int number1, int number2)
         {
-            throw new NotImplementedException();
+            var val  = number1 + number2;
+            return val;
         }
 
         public int GetSmallestNumber(int number1, int number2)
         {
-            throw new NotImplementedException();
+            
+            var val = (number1 < number2) ? number1 : number2;
+            return val;
         }
 
         public long Multiply(long factor1, long factor2)
         {
-            throw new NotImplementedException();
+            var val = (factor1 * factor2);
+            return val;
         }
 
         public string GetGreeting(string nameOfPerson)
         {
-            throw new NotImplementedException();
+            var greet = $"Hello {nameOfPerson}!";
+            return greet;
         }
 
         public string GetHey()
         {
-            throw new NotImplementedException();
+            var hey = "Hey";
+            return hey;
         }
     }
 }
