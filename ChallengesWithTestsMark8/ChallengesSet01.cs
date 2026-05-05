@@ -50,7 +50,7 @@ namespace ChallengesWithTestsMark8
 
         public string GetHey()
         {
-            var hey = "Hey";
+            var hey = "HEY!";
             return hey;
         }
     }
