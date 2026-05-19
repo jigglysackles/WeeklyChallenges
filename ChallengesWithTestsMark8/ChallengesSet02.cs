@@ -1,58 +1,92 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Linq;
 
-namespace ChallengesWithTestsMark8
+namespace ChallengesWithTestsMark8;
+
+public class ChallengesSet02
 {
-    public class ChallengesSet02
+    public bool CharacterIsALetter(char c)
     {
-        public bool CharacterIsALetter(char c)
-        {
-            throw new NotImplementedException();
-        }
+        if (!char.TryParse(c.ToString(), out var c1)) return true;
 
-        public bool CountOfElementsIsEven(string[] vals)
-        {
-            throw new NotImplementedException();
-        }
+        return false;
+    }
 
-        public bool IsNumberEven(int number)
-        {
-            throw new NotImplementedException();
-        }
+    public bool CountOfElementsIsEven(string[] vals)
+    {
+        if (vals.Length % 2 == 0) return true;
 
-        public bool IsNumberOdd(int num)
-        {
-            throw new NotImplementedException();
-        }
+        return false;
+    }
 
-        public double SumOfMinAndMax(IEnumerable<double> numbers)
-        {
-            throw new NotImplementedException();
-        }
+    public bool IsNumberEven(int number)
+    {
+        if (number % 2 == 0) return true;
 
-        public int GetLengthOfShortestString(string str1, string str2)
-        {
-            throw new NotImplementedException();
-        }
+        return false;
+    }
 
-        public int Sum(int[] numbers)
-        {
-            throw new NotImplementedException();
-        }
+    public bool IsNumberOdd(int num)
+    {
+        if (num % 2 != 0) return true;
 
-        public int SumEvens(int[] numbers)
-        {
-            throw new NotImplementedException();
-        }
+        return false;
+    }
 
-        public bool IsSumOdd(List<int> numbers)
-        {
-            throw new NotImplementedException();
-        }
+    public double SumOfMinAndMax(IEnumerable<double> numbers)
+    {
+        // var convertedValues = numbers.ToArray();
+        // var min = convertedValues.Min();
+        // var max =  convertedValues.Max();
 
-        public long CountOfPositiveOddsBelowNumber(long number)
-        {
-            throw new NotImplementedException();
-        }
+        var min = numbers.Min();
+        var max = numbers.Max();
+
+        return min + max;
+    }
+
+    public int GetLengthOfShortestString(string str1, string str2)
+    {
+        var countStr1 = str1.Length;
+        var countStr2 = str2.Length;
+        if (countStr1 < countStr2) return countStr1;
+
+        return countStr2;
+    }
+
+    public int Sum(int[] numbers)
+    {
+        var sum = 0;
+        foreach (var number in numbers) sum += number;
+        return sum;
+    }
+
+    public int SumEvens(int[] numbers)
+    {
+        var evenSum = 0;
+        foreach (var number in numbers)
+            if (number % 2 == 0)
+                evenSum += number;
+
+        return evenSum;
+    }
+
+    public bool IsSumOdd(List<int> numbers)
+    {
+        foreach (var number in numbers)
+            if (number % 2 == 0)
+                return false;
+
+        return true;
+    }
+
+    public long CountOfPositiveOddsBelowNumber(long number)
+    {
+        var count = 0;
+        for (var i = 1; i < number; i++)
+            if (i % 2 != 0)
+                count++;
+
+        return count;
     }
 }
