@@ -1,12 +1,11 @@
 ﻿using System;
 
-namespace ChallengesWithTestsMark8
+namespace ChallengesWithTestsMark8;
+
+internal class Program
 {
-    class Program
+    private static void Main(string[] args)
     {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Hello, world!");
-        }
+        Console.WriteLine("Hello, world!");
     }
 }
