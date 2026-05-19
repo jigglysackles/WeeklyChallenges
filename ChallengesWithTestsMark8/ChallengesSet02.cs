@@ -7,9 +7,9 @@ public class ChallengesSet02
 {
     public bool CharacterIsALetter(char c)
     {
-        if (!char.TryParse(c.ToString(), out var c1)) return true;
+        if (!char.TryParse(c.ToString(), out var c1)) return false;
 
-        return false;
+        return true;
     }
 
     public bool CountOfElementsIsEven(string[] vals)
@@ -39,9 +39,10 @@ public class ChallengesSet02
         // var min = convertedValues.Min();
         // var max =  convertedValues.Max();
 
+        if (numbers == null || !numbers.Any()) return 0;
+
         var min = numbers.Min();
         var max = numbers.Max();
-
         return min + max;
     }
 
@@ -56,6 +57,8 @@ public class ChallengesSet02
 
     public int Sum(int[] numbers)
     {
+        if (numbers == null || !numbers.Any()) return 0;
+
         var sum = 0;
         foreach (var number in numbers) sum += number;
         return sum;
@@ -63,6 +66,8 @@ public class ChallengesSet02
 
     public int SumEvens(int[] numbers)
     {
+        if (numbers == null || !numbers.Any()) return 0;
+
         var evenSum = 0;
         foreach (var number in numbers)
             if (number % 2 == 0)
@@ -73,11 +78,13 @@ public class ChallengesSet02
 
     public bool IsSumOdd(List<int> numbers)
     {
-        foreach (var number in numbers)
-            if (number % 2 == 0)
-                return false;
+        if (numbers == null || !numbers.Any()) return false;
 
-        return true;
+        var oddSum = 0;
+        foreach (var number in numbers) oddSum += number;
+        if (oddSum % 2 != 0) return true;
+
+        return false;
     }
 
     public long CountOfPositiveOddsBelowNumber(long number)
