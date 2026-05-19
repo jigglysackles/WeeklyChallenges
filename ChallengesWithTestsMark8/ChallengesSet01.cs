@@ -6,14 +6,6 @@ public class ChallengesSet01
     {
         var YayNay = num1 == num2 ? true : false;
         return YayNay;
-        // if(num1 == num2)
-        // {
-        //     return true;
-        // }
-        // else
-        // {
-        //     return false;
-        // }
     }
 
     public double Subtract(double minuend, double subtrahend)
@@ -48,7 +40,7 @@ public class ChallengesSet01
 
     public string GetHey()
     {
-        var hey = "Hey";
+        var hey = "HEY!";
         return hey;
     }
 }
