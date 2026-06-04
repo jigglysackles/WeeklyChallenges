@@ -9,7 +9,9 @@ public class ChallengesSet02
     {
         if (!char.TryParse(c.ToString(), out var c1)) return false;
 
-        return true;
+        if (char.IsAsciiLetter(c1)) return true;
+
+        return false;
     }
 
     public bool CountOfElementsIsEven(string[] vals)
