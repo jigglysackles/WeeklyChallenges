@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 
 namespace ChallengesWithTestsMark8;
@@ -8,14 +7,10 @@ public class ChallengesSet03
 {
     public bool ArrayContainsAFalse(bool[] vals)
     {
-        bool containsFalse = false;
-        foreach (bool val in vals)
-        {
-            if (val == false)
-            {
+        var containsFalse = false;
+        foreach (var val in vals)
+            if (!val)
                 containsFalse = true;
-            }
-        }
 
         return containsFalse;
     }
@@ -25,14 +20,10 @@ public class ChallengesSet03
         if (numbers == null) return false;
         var sum = 0;
         foreach (var number in numbers)
-        {
             if (number % 2 != 0)
-            {
                 sum += number;
-            }
-        }
 
-        return (sum % 2 != 0) ? true : false;
+        return sum % 2 != 0 ? true : false;
     }
 
     public bool PasswordContainsUpperLowerAndNumber(string password)
@@ -42,32 +33,18 @@ public class ChallengesSet03
         var containsLower = false;
 
         var allChars = password.ToCharArray();
-        for (int i = 0; i < allChars.Length; i++)
+        for (var i = 0; i < allChars.Length; i++)
         {
-            if (char.IsDigit(allChars[i]))
-            {
-                containsNumber = true;
-            }
+            if (char.IsDigit(allChars[i])) containsNumber = true;
 
-            if (char.IsUpper(allChars[i]))
-            {
-                containsUpper = true;
-            }
+            if (char.IsUpper(allChars[i])) containsUpper = true;
 
-            if (char.IsLower(allChars[i]))
-            {
-                containsLower = true;
-            }
+            if (char.IsLower(allChars[i])) containsLower = true;
         }
 
-        if (containsNumber && containsLower && containsUpper)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        if (containsNumber && containsLower && containsUpper) return true;
+
+        return false;
     }
 
     public char GetFirstLetterOfString(string val)
@@ -85,7 +62,7 @@ public class ChallengesSet03
 
     public decimal Divide(decimal dividend, decimal divisor)
     {
-        return (divisor != 0) ? dividend / divisor : 0;
+        return divisor != 0 ? dividend / divisor : 0;
     }
 
     public int LastMinusFirst(int[] nums)
@@ -103,9 +80,6 @@ public class ChallengesSet03
 
     public void ChangeAllElementsToUppercase(string[] words)
     {
-        for (int i = 0; i < words.Length; i++)
-        {
-            words[i] = words[i].ToUpper();
-        }
+        for (var i = 0; i < words.Length; i++) words[i] = words[i].ToUpper();
     }
 }

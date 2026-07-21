@@ -34,7 +34,8 @@ public class ChallengesSet01
 
     public string GetGreeting(string nameOfPerson)
     {
-        var greet = $"Hello {nameOfPerson}!";
+        if (string.IsNullOrEmpty(nameOfPerson)) return "Hello!";
+        var greet = $"Hello, {nameOfPerson}!";
         return greet;
     }
 
